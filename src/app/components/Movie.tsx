@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-// Define an interface for the movie data
 interface MovieData {
     Title: string;
     Plot: string;
@@ -33,7 +32,7 @@ export const GetMovie = () => {
             if (!response.ok) throw new Error("Movie Not Found");
             const data: MovieData = await response.json();
             setApiData(data);
-        } catch (error: any) {
+        } catch (error) {
             console.error(error);
             setError(true);
         } finally {
